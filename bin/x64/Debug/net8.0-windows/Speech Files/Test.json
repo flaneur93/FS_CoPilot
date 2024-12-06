@@ -1,0 +1,22 @@
+{
+  "categories": [
+    {
+      "categoryName": "Category1",
+      "subcategories": [
+        {
+          "subcategoryName": "Subcategory1",
+          "events": [
+            {
+              "eventID": "Event1",
+              "speechText": "qweqwe"
+            },
+            {
+              "eventID": "Event2",
+              "speechText": "Text2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

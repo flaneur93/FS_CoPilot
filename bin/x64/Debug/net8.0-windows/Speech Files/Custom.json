@@ -1,0 +1,676 @@
+{
+  "categories": [
+    {
+      "categoryName": "AP / FLIGHT ASSIST",
+      "subcategories": [
+        {
+          "subcategoryName": "Autopilot",
+          "events": [
+            {
+              "eventID": "AP_AIRSPEED_ON",
+              "speechText": "{value}"
+            },
+            {
+              "eventID": "AP_AIRSPEED_SET",
+              "speechText": "123 {value}"
+            },
+            {
+              "eventID": "AP_ALT_VAR_DEC",
+              "speechText": "testestes {value}"
+            },
+            {
+              "eventID": "AP_ALT_VAR_INC",
+              "speechText": "10005 {value}"
+            },
+            {
+              "eventID": "AP_ALT_HOLD",
+              "speechText": "Activate the ap alt hold feature."
+            },
+            {
+              "eventID": "AP_ALT_HOLD_OFF",
+              "speechText": "Activate the ap alt hold off feature."
+            },
+            {
+              "eventID": "AP_ALT_HOLD_ON",
+              "speechText": "Activate the ap alt hold on feature."
+            },
+            {
+              "eventID": "AP_ALT_VAR_SET_ENGLISH",
+              "speechText": "Activate the ap alt var set english feature."
+            },
+            {
+              "eventID": "AP_ALT_VAR_SET_METRIC",
+              "speechText": "Activate the ap alt var set metric feature."
+            },
+            {
+              "eventID": "AP_APR_HOLD",
+              "speechText": "Activate the ap apr hold feature."
+            },
+            {
+              "eventID": "AP_APR_HOLD_OFF",
+              "speechText": "Activate the ap apr hold off feature."
+            },
+            {
+              "eventID": "AP_APR_HOLD_ON",
+              "speechText": "Activate the ap apr hold on feature."
+            },
+            {
+              "eventID": "AP_ATT_HOLD",
+              "speechText": "Activate the ap att hold feature."
+            },
+            {
+              "eventID": "AP_ATT_HOLD_OFF",
+              "speechText": "Activate the ap att hold off feature."
+            },
+            {
+              "eventID": "AP_ATT_HOLD_ON",
+              "speechText": "Activate the ap att hold on feature."
+            },
+            {
+              "eventID": "AP_AVIONICS_MANAGED_OFF",
+              "speechText": "Activate the ap avionics managed off feature."
+            },
+            {
+              "eventID": "AP_AVIONICS_MANAGED_ON",
+              "speechText": "Activate the ap avionics managed on feature."
+            },
+            {
+              "eventID": "AP_AVIONICS_MANAGED_SET",
+              "speechText": "Activate the ap avionics managed set feature."
+            },
+            {
+              "eventID": "AP_AVIONICS_MANAGED_TOGGLE",
+              "speechText": "Activate the ap avionics managed toggle feature."
+            },
+            {
+              "eventID": "AP_BANK_HOLD",
+              "speechText": "Activate the ap bank hold feature."
+            },
+            {
+              "eventID": "AP_BANK_HOLD_OFF",
+              "speechText": "Activate the ap bank hold off feature."
+            },
+            {
+              "eventID": "AP_BANK_HOLD_ON",
+              "speechText": "Activate the ap bank hold on feature."
+            },
+            {
+              "eventID": "AP_BC_HOLD",
+              "speechText": "Activate the ap bc hold feature."
+            },
+            {
+              "eventID": "AP_BC_HOLD_OFF",
+              "speechText": "Activate the ap bc hold off feature."
+            },
+            {
+              "eventID": "AP_BC_HOLD_ON",
+              "speechText": "Activate the ap bc hold on feature."
+            },
+            {
+              "eventID": "AP_HDG_HOLD",
+              "speechText": "Activate the ap hdg hold feature."
+            },
+            {
+              "eventID": "AP_HDG_HOLD_OFF",
+              "speechText": "Activate the ap hdg hold off feature."
+            },
+            {
+              "eventID": "AP_HDG_HOLD_ON",
+              "speechText": "Activate the ap hdg hold on feature."
+            },
+            {
+              "eventID": "AP_LOC_HOLD",
+              "speechText": "Activate the ap loc hold feature."
+            },
+            {
+              "eventID": "AP_LOC_HOLD_OFF",
+              "speechText": "Activate the ap loc hold off feature."
+            },
+            {
+              "eventID": "AP_LOC_HOLD_ON",
+              "speechText": "Activate the ap loc hold on feature."
+            },
+            {
+              "eventID": "AP_MACH_VAR_DEC",
+              "speechText": "Activate the ap mach var dec feature."
+            },
+            {
+              "eventID": "AP_MACH_VAR_INC",
+              "speechText": "Activate the ap mach var inc feature."
+            },
+            {
+              "eventID": "AP_MACH_HOLD",
+              "speechText": "Activate the ap mach hold feature."
+            },
+            {
+              "eventID": "AP_MACH_OFF",
+              "speechText": "Activate the ap mach off feature."
+            },
+            {
+              "eventID": "AP_MACH_ON",
+              "speechText": "Activate the ap mach on feature."
+            },
+            {
+              "eventID": "AP_MACH_SET",
+              "speechText": "Activate the ap mach set feature."
+            },
+            {
+              "eventID": "AP_MACH_VAR_SET",
+              "speechText": "Activate the ap mach var set feature."
+            },
+            {
+              "eventID": "AP_MACH_VAR_SET_EX1",
+              "speechText": "Activate the ap mach var set ex1 feature."
+            },
+            {
+              "eventID": "AP_MANAGED_SPEED_IN_MACH_OFF",
+              "speechText": "Activate the ap managed speed in mach off feature."
+            },
+            {
+              "eventID": "AP_MANAGED_SPEED_IN_MACH_ON",
+              "speechText": "Activate the ap managed speed in mach on feature."
+            },
+            {
+              "eventID": "AP_MANAGED_SPEED_IN_MACH_SET",
+              "speechText": "Activate the ap managed speed in mach set feature."
+            },
+            {
+              "eventID": "AP_MANAGED_SPEED_IN_MACH_TOGGLE",
+              "speechText": "Activate the ap managed speed in mach toggle feature."
+            },
+            {
+              "eventID": "AP_MASTER",
+              "speechText": "Activate the ap master feature."
+            },
+            {
+              "eventID": "AP_MASTER_ALT",
+              "speechText": "Activate the ap master alt feature."
+            },
+            {
+              "eventID": "AP_MAX_BANK_INC",
+              "speechText": "Activate the ap max bank inc feature."
+            },
+            {
+              "eventID": "AP_MAX_BANK_DEC",
+              "speechText": "Activate the ap max bank dec feature."
+            },
+            {
+              "eventID": "AP_MAX_BANK_SET",
+              "speechText": "Activate the ap max bank set feature."
+            },
+            {
+              "eventID": "AP_N1_HOLD",
+              "speechText": "Activate the ap n1 hold feature."
+            },
+            {
+              "eventID": "AP_N1_REF_DEC",
+              "speechText": "Activate the ap n1 ref dec feature."
+            },
+            {
+              "eventID": "AP_N1_REF_INC",
+              "speechText": "Activate the ap n1 ref inc feature."
+            },
+            {
+              "eventID": "AP_N1_REF_SET",
+              "speechText": "Activate the ap n1 ref set feature."
+            },
+            {
+              "eventID": "AP_NAV_SELECT_SET",
+              "speechText": "Activate the ap nav select set feature."
+            },
+            {
+              "eventID": "AP_NAV1_HOLD",
+              "speechText": "Activate the ap nav1 hold feature."
+            },
+            {
+              "eventID": "AP_NAV1_HOLD_OFF",
+              "speechText": "Activate the ap nav1 hold off feature."
+            },
+            {
+              "eventID": "AP_NAV1_HOLD_ON",
+              "speechText": "Activate the ap nav1 hold on feature."
+            },
+            {
+              "eventID": "AP_PANEL_ALTITUDE_HOLD",
+              "speechText": "Activate the ap panel altitude hold feature."
+            },
+            {
+              "eventID": "AP_PANEL_ALTITUDE_OFF",
+              "speechText": "Activate the ap panel altitude off feature."
+            },
+            {
+              "eventID": "AP_PANEL_ALTITUDE_ON",
+              "speechText": "Activate the ap panel altitude on feature."
+            },
+            {
+              "eventID": "AP_PANEL_ALTITUDE_SET",
+              "speechText": "Activate the ap panel altitude set feature."
+            },
+            {
+              "eventID": "AP_PANEL_HEADING_HOLD",
+              "speechText": "Activate the ap panel heading hold feature."
+            },
+            {
+              "eventID": "AP_PANEL_HEADING_OFF",
+              "speechText": "Activate the ap panel heading off feature."
+            },
+            {
+              "eventID": "AP_PANEL_HEADING_ON",
+              "speechText": "Activate the ap panel heading on feature."
+            },
+            {
+              "eventID": "AP_PANEL_HEADING_SET",
+              "speechText": "Activate the ap panel heading set feature."
+            },
+            {
+              "eventID": "AP_PANEL_MACH_HOLD",
+              "speechText": "Activate the ap panel mach hold feature."
+            },
+            {
+              "eventID": "AP_PANEL_MACH_OFF",
+              "speechText": "Activate the ap panel mach off feature."
+            },
+            {
+              "eventID": "AP_PANEL_MACH_ON",
+              "speechText": "Activate the ap panel mach on feature."
+            },
+            {
+              "eventID": "AP_PANEL_MACH_SET",
+              "speechText": "Activate the ap panel mach set feature."
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_HOLD",
+              "speechText": "Activate the ap panel speed hold feature."
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_OFF",
+              "speechText": "Activate the ap panel speed off feature."
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_ON",
+              "speechText": "Activate the ap panel speed on feature."
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_SET",
+              "speechText": "Activate the ap panel speed set feature."
+            },
+            {
+              "eventID": "AP_PANEL_VS_OFF",
+              "speechText": "Activate the ap panel vs off feature."
+            },
+            {
+              "eventID": "AP_PANEL_VS_ON",
+              "speechText": "Activate the ap panel vs on feature."
+            },
+            {
+              "eventID": "AP_PANEL_VS_SET",
+              "speechText": "Activate the ap panel vs set feature."
+            },
+            {
+              "eventID": "AP_PANEL_VS_HOLD",
+              "speechText": "Activate the ap panel vs hold feature."
+            },
+            {
+              "eventID": "AP_PITCH_LEVELER",
+              "speechText": "Activate the ap pitch leveler feature."
+            },
+            {
+              "eventID": "AP_PITCH_LEVELER_OFF",
+              "speechText": "Activate the ap pitch leveler off feature."
+            },
+            {
+              "eventID": "AP_PITCH_LEVELER_ON",
+              "speechText": "Activate the ap pitch leveler on feature."
+            },
+            {
+              "eventID": "AP_PITCH_REF_INC_DN",
+              "speechText": "Activate the ap pitch ref inc dn feature."
+            },
+            {
+              "eventID": "AP_PITCH_REF_INC_UP",
+              "speechText": "Activate the ap pitch ref inc up feature."
+            },
+            {
+              "eventID": "AP_PITCH_REF_SET",
+              "speechText": "Activate the ap pitch ref set feature."
+            },
+            {
+              "eventID": "AP_RPM_SLOT_INDEX_SET",
+              "speechText": "Activate the ap rpm slot index set feature."
+            },
+            {
+              "eventID": "AP_SPD_VAR_DEC",
+              "speechText": "Activate the ap spd var dec feature."
+            },
+            {
+              "eventID": "AP_SPD_VAR_INC",
+              "speechText": "Activate the ap spd var inc feature."
+            },
+            {
+              "eventID": "AP_SPD_VAR_SET",
+              "speechText": "Activate the ap spd var set feature."
+            },
+            {
+              "eventID": "AP_SPD_VAR_SET_EX1",
+              "speechText": "Activate the ap spd var set ex1 feature."
+            },
+            {
+              "eventID": "AP_SPEED_SLOT_INDEX_SET",
+              "speechText": "Activate the ap speed slot index set feature."
+            },
+            {
+              "eventID": "AP_VS_HOLD",
+              "speechText": "Activate the ap vs hold feature."
+            },
+            {
+              "eventID": "AP_VS_OFF",
+              "speechText": "Activate the ap vs off feature."
+            },
+            {
+              "eventID": "AP_VS_ON",
+              "speechText": "Activate the ap vs on feature."
+            },
+            {
+              "eventID": "AP_VS_SET",
+              "speechText": "Activate the ap vs set feature."
+            },
+            {
+              "eventID": "AP_VS_SLOT_INDEX_SET",
+              "speechText": "Activate the ap vs slot index set feature."
+            },
+            {
+              "eventID": "AP_VS_VAR_DEC",
+              "speechText": "Activate the ap vs var dec feature."
+            },
+            {
+              "eventID": "AP_VS_VAR_INC",
+              "speechText": "Activate the ap vs var inc feature."
+            },
+            {
+              "eventID": "AP_VS_VAR_SET_ENGLISH",
+              "speechText": "Activate the ap vs var set english feature."
+            },
+            {
+              "eventID": "AP_VS_VAR_SET_METRIC",
+              "speechText": "Activate the ap vs var set metric feature."
+            },
+            {
+              "eventID": "AP_WING_LEVELER",
+              "speechText": "Activate the ap wing leveler feature."
+            },
+            {
+              "eventID": "AP_WING_LEVELER_OFF",
+              "speechText": "Activate the ap wing leveler off feature."
+            },
+            {
+              "eventID": "AP_WING_LEVELER_ON",
+              "speechText": "Activate the ap wing leveler on feature."
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_HOLD_TOGGLE",
+              "speechText": "Activate the ap panel speed hold toggle feature."
+            },
+            {
+              "eventID": "AP_PANEL_MACH_HOLD_TOGGLE",
+              "speechText": "Activate the ap panel mach hold toggle feature."
+            },
+            {
+              "eventID": "AUTOPILOT_AIRSPEED_ACQUIRE",
+              "speechText": "Activate the autopilot airspeed acquire feature."
+            },
+            {
+              "eventID": "AUTOPILOT_DISENGAGE_SET",
+              "speechText": "Activate the autopilot disengage set feature."
+            },
+            {
+              "eventID": "AUTOPILOT_DISENGAGE_TOGGLE",
+              "speechText": "Activate the autopilot disengage toggle feature."
+            },
+            {
+              "eventID": "AUTOPILOT_OFF",
+              "speechText": "Activate the autopilot off feature."
+            },
+            {
+              "eventID": "AUTOPILOT_ON",
+              "speechText": "Activate the autopilot on feature."
+            },
+            {
+              "eventID": "AUTOPILOT_PANEL_AIRSPEED_SET",
+              "speechText": "Activate the autopilot panel airspeed set feature."
+            },
+            {
+              "eventID": "AUTOPILOT_PANEL_CRUISE_SPEED",
+              "speechText": "Activate the autopilot panel cruise speed feature."
+            },
+            {
+              "eventID": "AUTOPILOT_PANEL_MAX_SPEED",
+              "speechText": "Activate the autopilot panel max speed feature."
+            },
+            {
+              "eventID": "FLIGHT_LEVEL_CHANGE",
+              "speechText": "Activate the flight level change feature."
+            },
+            {
+              "eventID": "FLIGHT_LEVEL_CHANGE_OFF",
+              "speechText": "Activate the flight level change off feature."
+            },
+            {
+              "eventID": "FLIGHT_LEVEL_CHANGE_ON",
+              "speechText": "Activate the flight level change on feature."
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Subcategory 1.2",
+          "events": [
+            {
+              "eventID": "ENGINE_STOP",
+              "speechText": "Stop the engine"
+            },
+            {
+              "eventID": "LIGHTS_ON",
+              "speechText": "Turn on the lights"
+            },
+            {
+              "eventID": "LIGHTS_OFF",
+              "speechText": "Turn off 5165the lights {value}"
+            },
+            {
+              "eventID": "PARKING_BRAKE_ON",
+              "speechText": "Engage the parking brake"
+            },
+            {
+              "eventID": "PARKING_BRAKE_OFF",
+              "speechText": "Release the parking brake"
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Subcategory 1.3",
+          "events": [
+            {
+              "eventID": "AUTOPILOT_ON",
+              "speechText": "Enable autopilot"
+            },
+            {
+              "eventID": "AUTOPILOT_OFF",
+              "speechText": "Disable autopilot"
+            },
+            {
+              "eventID": "ALTITUDE_HOLD",
+              "speechText": "Hold current altitude"
+            },
+            {
+              "eventID": "HEADING_HOLD",
+              "speechText": "Hold current heading"
+            },
+            {
+              "eventID": "NAV_MODE",
+              "speechText": "Switch to NAV mode"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "ELECTRICAL EVENTS",
+      "subcategories": [
+        {
+          "subcategoryName": "Subcategory 2.1",
+          "events": [
+            {
+              "eventID": "SPEED_INCREASE",
+              "speechText": "Increase speed"
+            },
+            {
+              "eventID": "SPEED_DECREASE",
+              "speechText": "Decrease speed"
+            },
+            {
+              "eventID": "CLIMB",
+              "speechText": "Climb to higher altitude"
+            },
+            {
+              "eventID": "DESCEND",
+              "speechText": "Descend to lower altitude"
+            },
+            {
+              "eventID": "TURN_LEFT",
+              "speechText": "Turn left"
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Subcategory 2.2",
+          "events": [
+            {
+              "eventID": "TURN_RIGHT",
+              "speechText": "Turn right"
+            },
+            {
+              "eventID": "LAND",
+              "speechText": "Initiate landing"
+            },
+            {
+              "eventID": "TAKEOFF",
+              "speechText": "Initiate takeoff"
+            },
+            {
+              "eventID": "APU_ON",
+              "speechText": "Turn on APU"
+            },
+            {
+              "eventID": "APU_OFF",
+              "speechText": "Turn off APU"
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Subcategory 2.3",
+          "events": [
+            {
+              "eventID": "FUEL_PUMP_ON",
+              "speechText": "Turn on fuel pump"
+            },
+            {
+              "eventID": "FUEL_PUMP_OFF",
+              "speechText": "Turn off fuel pump"
+            },
+            {
+              "eventID": "BEACON_LIGHT_ON",
+              "speechText": "Turn on beacon light"
+            },
+            {
+              "eventID": "BEACON_LIGHT_OFF",
+              "speechText": "Turn off beacon light"
+            },
+            {
+              "eventID": "STROBE_LIGHT_ON",
+              "speechText": "Turn on strobe light"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "ENGINE EVENTS",
+      "subcategories": [
+        {
+          "subcategoryName": "Subcategory 3.1",
+          "events": [
+            {
+              "eventID": "STROBE_LIGHT_OFF",
+              "speechText": "Turn off strobe light"
+            },
+            {
+              "eventID": "ALTIMETER_SET",
+              "speechText": "Set altimeter"
+            },
+            {
+              "eventID": "CABIN_LIGHT_ON",
+              "speechText": "Turn on cabin light"
+            },
+            {
+              "eventID": "CABIN_LIGHT_OFF",
+              "speechText": "Turn off cabin light"
+            },
+            {
+              "eventID": "DOOR_OPEN",
+              "speechText": "Open the door"
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Subcategory 3.2",
+          "events": [
+            {
+              "eventID": "DOOR_CLOSE",
+              "speechText": "Close the door"
+            },
+            {
+              "eventID": "SEATBELT_ON",
+              "speechText": "Fasten seatbelts"
+            },
+            {
+              "eventID": "SEATBELT_OFF",
+              "speechText": "Release seatbelts"
+            },
+            {
+              "eventID": "NO_SMOKING_ON",
+              "speechText": "Turn on no smoking sign"
+            },
+            {
+              "eventID": "NO_SMOKING_OFF",
+              "speechText": "Turn off no smoking sign"
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Subcategory 3.3",
+          "events": [
+            {
+              "eventID": "NAV_LIGHT_ON",
+              "speechText": "Turn on navigation lights"
+            },
+            {
+              "eventID": "NAV_LIGHT_OFF",
+              "speechText": "Turn off navigation lights"
+            },
+            {
+              "eventID": "THRUST_INCREASE",
+              "speechText": "Increase thrust"
+            },
+            {
+              "eventID": "THRUST_DECREASE",
+              "speechText": "Decrease thrust"
+            },
+            {
+              "eventID": "ENGINE_CHECK",
+              "speechText": "Perform engine check"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
