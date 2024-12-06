@@ -45,7 +45,7 @@ namespace fs_copilot
                 if (recognizer.AcceptWaveform(e.Buffer, e.BytesRecorded))
                 {
                     string result = recognizer.Result();
-                    if (result != lastRecognitionResult) // Aynı sonuç tekrar edilmesin
+                    if (result.Length >= 2) // 
                     {
                         lastRecognitionResult = result;
                         LogDebug($"{result}");
