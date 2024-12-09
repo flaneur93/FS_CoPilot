@@ -16,8 +16,14 @@ namespace fs_copilot
 
     public partial class MainWindow : Window
     {
+
+
+        public static MainWindow Instance { get; private set; }
         private DataManager _dataManager = new DataManager();
         private FsConnection _fsConnection;
+        private VoiceModule _voiceModule;
+
+
 
 
         public MainWindow()
@@ -26,12 +32,20 @@ namespace fs_copilot
             InitializeComponent();
             PopulateProfileSelectComboBox();
 
+            MainWindow.Instance = this;
             _fsConnection = new FsConnection(this);
             _dataManager = new DataManager();
+            _voiceModule = new VoiceModule();
+            _voiceModule.StartRecognition();
 
             InitializeFsConnection();
 
         }
+
+
+
+
+
 
 
 
@@ -112,8 +126,8 @@ namespace fs_copilot
                 return;
 
             string selectedFile = ProfileSelect_CB.SelectedItem.ToString();
-            string controlsPath = Path.Combine(Directory.GetCurrentDirectory(), "Controls");
-            string selectedFilePath = Path.Combine(controlsPath, selectedFile);
+            string controlsPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Controls");
+            string selectedFilePath = System.IO.Path.Combine(controlsPath, selectedFile);
 
             try
             {
@@ -121,10 +135,19 @@ namespace fs_copilot
                 PopulateCategoryComboBox(); // Kategorileri doldur
                 EventListView.Items.Clear();
                 Subcategory_CB.Items.Clear();
+
+                // Yeni Grammar.json oluştur
+                string grammarPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Grammar.json");
+                _dataManager.CreateGrammarJson(grammarPath);
+                WriteToMainConsole($"[INFO] Yeni Grammar.json başarıyla oluşturuldu: {grammarPath}");
+
+                // VoiceModule yeniden başlat
+                _voiceModule.RestartRecognition();
+                WriteToMainConsole("[INFO] VoiceModule yeniden başlatıldı.");
             }
             catch (Exception ex)
             {
-                WriteToMainConsole($"[ERROR] JSON dosyası yüklenirken hata oluştu: {ex.Message}");
+                WriteToMainConsole($"[ERROR] Profil değiştirilirken hata oluştu: {ex.Message}");
             }
         }
 

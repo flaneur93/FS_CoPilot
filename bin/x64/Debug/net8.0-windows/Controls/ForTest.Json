@@ -8,7 +8,7 @@
           "Js_Events": [
             {
               "Js_Event": "GEAR_UP",
-              "SpeechText": "up test 123",
+              "SpeechText": "Landing gear up",
               "hasParam": false,
               "Js_id": "1"
             },
@@ -25,13 +25,13 @@
           "Js_Events": [
             {
               "Js_Event": "AXIS_CONDITION_LEVER_1_SET",
-              "SpeechText": "",
+              "SpeechText": "test audio",
               "hasParam": false,
               "Js_id": "3"
             },
             {
               "Js_Event": "AXIS_CONDITION_LEVER_2_SET",
-              "SpeechText": "",
+              "SpeechText": "television",
               "hasParam": false,
               "Js_id": "4"
             }

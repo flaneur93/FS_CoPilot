@@ -115,6 +115,36 @@ public class DataManager
         File.WriteAllText(LoadedJsonProfile, updatedJson);
     }
 
+    public void CreateGrammarJson(string outputFilePath)
+    {
+        if (string.IsNullOrEmpty(LoadedJsonProfile))
+            throw new Exception("JSON profili yüklenmedi.");
+
+        try
+        {
+            var grammarList = new List<string>();
+
+            foreach (var subcategoryEvents in Events.Values)
+            {
+                foreach (var eventItem in subcategoryEvents)
+                {
+                    if (!string.IsNullOrEmpty(eventItem.SpeechText))
+                    {
+                        grammarList.Add(eventItem.SpeechText);
+                    }
+                }
+            }
+
+            // Grammar.json dosyasını oluştur
+            var grammarJson = JsonSerializer.Serialize(new { Grammar = grammarList }, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(outputFilePath, grammarJson);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Grammar.json oluşturulurken hata oluştu: {ex.Message}");
+        }
+    }
+
 
 
 }
