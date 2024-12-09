@@ -9,6 +9,7 @@
       "fs_copilot/1.0.0": {
         "dependencies": {
           "NAudio": "2.2.1",
+          "System.Speech": "9.0.0",
           "Vosk": "0.3.38",
           "Microsoft.FlightSimulator.SimConnect": "12.0.0.0"
         },
@@ -111,6 +112,22 @@
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
+      "System.Speech/9.0.0": {
+        "runtime": {
+          "lib/net8.0/System.Speech.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Speech.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
       "Vosk/0.3.38": {
         "runtime": {
           "lib/netstandard2.0/Vosk.dll": {
@@ -211,6 +228,13 @@
       "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "System.Speech/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z8mvEVBfWSi0692vPOra8MougSEJCDzlaLj4g0aA87XDZpJoJD3BJTcJ0MuFbbN1fOT9Cr2ZFqXhZc+zzX0Gwg==",
+      "path": "system.speech/9.0.0",
+      "hashPath": "system.speech.9.0.0.nupkg.sha512"
     },
     "Vosk/0.3.38": {
       "type": "package",

@@ -8,7 +8,7 @@
           "events": [
             {
               "eventID": "AP_AIRSPEED_ON",
-              "speechText": "air speed on"
+              "speechText": "airspeed off {value}"
             },
             {
               "eventID": "AP_AIRSPEED_SET",

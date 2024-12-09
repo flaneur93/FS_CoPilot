@@ -1,0 +1,1639 @@
+{
+  "categories": [
+    {
+      "categoryName": "AP / FLIGHT ASSIST",
+      "subcategories": [
+        {
+          "subcategoryName": "Autopilot",
+          "events": [
+            {
+              "eventID": "AP_AIRSPEED_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_AIRSPEED_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ALT_VAR_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ALT_VAR_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ALT_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ALT_HOLD_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ALT_HOLD_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ALT_VAR_SET_ENGLISH",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ALT_VAR_SET_METRIC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_APR_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_APR_HOLD_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_APR_HOLD_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ATT_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ATT_HOLD_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_ATT_HOLD_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_AVIONICS_MANAGED_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_AVIONICS_MANAGED_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_AVIONICS_MANAGED_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_AVIONICS_MANAGED_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_BANK_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_BANK_HOLD_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_BANK_HOLD_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_BC_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_BC_HOLD_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_BC_HOLD_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_HDG_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_HDG_HOLD_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_HDG_HOLD_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_LOC_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_LOC_HOLD_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_LOC_HOLD_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MACH_VAR_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MACH_VAR_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MACH_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MACH_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MACH_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MACH_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MACH_VAR_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MACH_VAR_SET_EX1",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MANAGED_SPEED_IN_MACH_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MANAGED_SPEED_IN_MACH_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MANAGED_SPEED_IN_MACH_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MANAGED_SPEED_IN_MACH_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MASTER",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MASTER_ALT",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MAX_BANK_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MAX_BANK_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_MAX_BANK_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_N1_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_N1_REF_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_N1_REF_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_N1_REF_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_NAV_SELECT_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_NAV1_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_NAV1_HOLD_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_NAV1_HOLD_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_ALTITUDE_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_ALTITUDE_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_ALTITUDE_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_ALTITUDE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_HEADING_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_HEADING_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_HEADING_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_HEADING_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_MACH_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_MACH_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_MACH_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_MACH_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_SPEED_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_VS_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_VS_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_VS_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PANEL_VS_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PITCH_LEVELER",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PITCH_LEVELER_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PITCH_LEVELER_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PITCH_REF_INC_DN",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PITCH_REF_INC_UP",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_PITCH_REF_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_RPM_SLOT_INDEX_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_SPD_VAR_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_SPD_VAR_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_SPD_VAR_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_SPD_VAR_SET_EX1",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_SPEED_SLOT_INDEX_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_VS_HOLD",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_VS_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_VS_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_VS_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_VS_SLOT_INDEX_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_VS_VAR_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AP_VS_VAR_INC",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Flight Assistance",
+          "events": [
+            {
+              "eventID": "AIRSPEED_BUG_SELECT",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ALTITUDE_BUG_SELECT",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AUTO_THROTTLE_ARM",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AUTO_THROTTLE_DISCONNECT",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AUTO_THROTTLE_TO_GA",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AUTOBRAKE_DISARM",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AUTOBRAKE_HI_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AUTOBRAKE_LO_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AUTOBRAKE_MED_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "DECREASE_AUTOBRAKE_CONTROL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "FLY_BY_WIRE_ELAC_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "FLY_BY_WIRE_FAC_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "FLY_BY_WIRE_SEC_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "GPWS_SWITCH_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "HEADING_BUG_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "HEADING_BUG_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "HEADING_BUG_SELECT",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "HEADING_BUG_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AP_HEADING_BUG_SET_EX1",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "INCREASE_AUTOBRAKE_CONTROL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "SET_AUTOBRAKE_CONTROL",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "SYNC_FLIGHT_DIRECTOR_PITCH",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_FLIGHT_DIRECTOR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "YAW_DAMPER_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "YAW_DAMPER_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "YAW_DAMPER_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "YAW_DAMPER_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "VSI_BUG_SELECT",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "ELECTRICAL EVENTS",
+      "subcategories": [
+        {
+          "subcategoryName": "Alternator",
+          "events": [
+            {
+              "eventID": "ALTERNATOR_OFF",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ALTERNATOR_ON",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ALTERNATOR_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ELECTRICAL_ALTERNATOR_BREAKER_TOGGLE",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "TOGGLE_ALTERNATOR1",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_ALTERNATOR2",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_ALTERNATOR3",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_ALTERNATOR4",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_MASTER_ALTERNATOR",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "APU",
+          "events": [
+            {
+              "eventID": "APU_BLEED_AIR_SOURCE_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "APU_BLEED_AIR_SOURCE_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "APU_EXTINGUISH_FIRE",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "APU_GENERATOR_SWITCH_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "APU_GENERATOR_SWITCH_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "APU_OFF_SWITCH",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "APU_STARTER",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Batteries",
+          "events": [
+            {
+              "eventID": "BATTERY1_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "BATTERY2_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "BATTERY3_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "BATTERY4_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ELECTRICAL_BATTERY_BREAKER_TOGGLE",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "MASTER_BATTERY_OFF",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "MASTER_BATTERY_ON",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "MASTER_BATTERY_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "TOGGLE_MASTER_BATTERY",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "TOGGLE_MASTER_BATTERY_ALTERNATOR",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "TOGGLE_ELECTRIC_VACUUM_PUMP",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "ENGINE EVENTS",
+      "subcategories": [
+        {
+          "subcategoryName": "Anti-Ice",
+          "events": [
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG2",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG3",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG4",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "ANTI_ICE_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "ANTI_ICE_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_SET_ENG1",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_SET_ENG2",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_SET_ENG3",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_SET_ENG4",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "ANTI_ICE_TOGGLE_ENG1",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "ANTI_ICE_TOGGLE_ENG2",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "ANTI_ICE_TOGGLE_ENG3",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "ANTI_ICE_TOGGLE_ENG4",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Condition Lever",
+          "events": [
+            {
+              "eventID": "AXIS_CONDITION_LEVER_1_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AXIS_CONDITION_LEVER_2_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AXIS_CONDITION_LEVER_3_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AXIS_CONDITION_LEVER_4_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_CUT_OFF",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_DEC",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_HIGH_IDLE",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_INC",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_LOW_IDLE",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_1_CUT_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_2_CUT_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_3_CUT_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_4_CUT_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_1_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_2_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_3_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_4_DEC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_1_HIGH_IDLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_2_HIGH_IDLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_3_HIGH_IDLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_4_HIGH_IDLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_1_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_2_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_3_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_4_INC",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_1_LOW_IDLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_2_LOW_IDLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_3_LOW_IDLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_4_LOW_IDLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "CONDITION_LEVER_1_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_2_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_3_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "CONDITION_LEVER_4_SET",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Fuel",
+          "events": [
+            {
+              "eventID": "AXIS_MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE2_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE3_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE4_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "FUEL_PUMP",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE_DECR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE1_DECR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE2_DECR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE3_DECR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE4_DECR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE_DECR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE1_DECR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE2_DECR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE3_DECR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE4_DECR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE_INCR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE1_INCR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE2_INCR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE3_INCR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE4_INCR",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE_INCR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE1_INCR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE2_INCR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE3_INCR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE4_INCR_SMALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE_LEAN",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE1_LEAN",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE2_LEAN",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE3_LEAN",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE4_LEAN",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE_RICH",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE1_RICH",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE2_RICH",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE3_RICH",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE4_RICH",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE_SET_BEST",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE2_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE3_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "MIXTURE4_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "SET_FUEL_VALVE_ENG1",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "SET_FUEL_VALVE_ENG2",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "SET_FUEL_VALVE_ENG3",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "SET_FUEL_VALVE_ENG4",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "SHUTOFF_VALVE_TOGGLE",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "SHUTOFF_VALVE_ON",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "SHUTOFF_VALVE_OFF",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_ELECT_FUEL_PUMP",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_ELECT_FUEL_PUMP1",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_ELECT_FUEL_PUMP2",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_ELECT_FUEL_PUMP3",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_ELECT_FUEL_PUMP4",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_FUEL_VALVE_ALL",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_FUEL_VALVE_ENG1",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_FUEL_VALVE_ENG2",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_FUEL_VALVE_ENG3",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "TOGGLE_FUEL_VALVE_ENG4",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "Flight Control Events",
+      "subcategories": [
+        {
+          "subcategoryName": "Ailerons",
+          "events": [
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Elevators",
+          "events": [
+            {
+              "eventID": "AXIS_CONDITION_LEVER_1_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AXIS_CONDITION_LEVER_2_SET",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Flaps",
+          "events": [
+            {
+              "eventID": "AXIS_MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        },
+		{
+          "subcategoryName": "Rudder",
+          "events": [
+            {
+              "eventID": "AXIS_MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        },
+		{
+          "subcategoryName": "Slew",
+          "events": [
+            {
+              "eventID": "AXIS_MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        },
+		{
+          "subcategoryName": "Spoilers",
+          "events": [
+            {
+              "eventID": "AXIS_MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "Fuel System Events",
+      "subcategories": [
+        {
+          "subcategoryName": "Cross Feed",
+          "events": [
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Fuel Selector",
+          "events": [
+            {
+              "eventID": "AXIS_CONDITION_LEVER_1_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AXIS_CONDITION_LEVER_2_SET",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Fuel System",
+          "events": [
+            {
+              "eventID": "AXIS_MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "Instrumentation Events",
+      "subcategories": [
+        {
+          "subcategoryName": "Aircraft Instruments",
+          "events": [
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "EGT",
+          "events": [
+            {
+              "eventID": "AXIS_CONDITION_LEVER_1_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AXIS_CONDITION_LEVER_2_SET",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        }        
+      ]
+    },
+    {
+      "categoryName": "Misc Events",
+      "subcategories": [
+        {
+          "subcategoryName": "Aircraft Failures",
+          "events": [
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Landing Gear / Brakes",
+          "events": [
+            {
+              "eventID": "AXIS_CONDITION_LEVER_1_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AXIS_CONDITION_LEVER_2_SET",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Gliders",
+          "events": [
+            {
+              "eventID": "AXIS_MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "Radio Navigation Events",
+      "subcategories": [
+        {
+          "subcategoryName": "Anti-Ice",
+          "events": [
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Condition Lever",
+          "events": [
+            {
+              "eventID": "AXIS_CONDITION_LEVER_1_SET",
+              "speechText": "",
+              "hasParameter": true
+            },
+            {
+              "eventID": "AXIS_CONDITION_LEVER_2_SET",
+              "speechText": "",
+              "hasParameter": true
+            }
+          ]
+        },
+        {
+          "subcategoryName": "Fuel",
+          "events": [
+            {
+              "eventID": "AXIS_MIXTURE_SET",
+              "speechText": "",
+              "hasParameter": false
+            },
+            {
+              "eventID": "AXIS_MIXTURE1_SET",
+              "speechText": "",
+              "hasParameter": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

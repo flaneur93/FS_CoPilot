@@ -1,0 +1,291 @@
+{
+    "categories": [
+        {
+            "categoryName": "Instrumentation Events",
+            "subcategories": [
+                {
+                    "subcategoryName": "Aircraft Instruments",
+                    "events": [
+                        {
+                            "eventID": "ANTI_ICE_GRADUAL_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "1"
+                        },
+                        {
+                            "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "2"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "EGT",
+                    "events": [
+                        {
+                            "eventID": "AXIS_CONDITION_LEVER_1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "3"
+                        },
+                        {
+                            "eventID": "AXIS_CONDITION_LEVER_2_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "categoryName": "Misc Events",
+            "subcategories": [
+                {
+                    "subcategoryName": "Aircraft Failures",
+                    "events": [
+                        {
+                            "eventID": "ANTI_ICE_GRADUAL_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "5"
+                        },
+                        {
+                            "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "6"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "Landing Gear / Brakes",
+                    "events": [
+                        {
+                            "eventID": "AXIS_CONDITION_LEVER_1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "7"
+                        },
+                        {
+                            "eventID": "AXIS_CONDITION_LEVER_2_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "8"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "Gliders",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "9"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "10"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "categoryName": "Radio Navigation Events",
+            "subcategories": [
+                {
+                    "subcategoryName": "ADF",
+                    "events": [
+                        {
+                            "eventID": "ANTI_ICE_GRADUAL_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "11"
+                        },
+                        {
+                            "eventID": "ANTI_ICE_GRADUAL_SET_ENG1",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "12"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "Avionics",
+                    "events": [
+                        {
+                            "eventID": "AXIS_CONDITION_LEVER_1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "13"
+                        },
+                        {
+                            "eventID": "AXIS_CONDITION_LEVER_2_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "14"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "COM",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "15"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "16"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "DME",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "17"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "18"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "ELT",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "19"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "20"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "GPS",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "21"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "22"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "Misc",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "23"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "24"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "NAV",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "25"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "26"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "TACAN",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "27"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "28"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "VOR",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "29"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "30"
+                        }
+                    ]
+                },
+                {
+                    "subcategoryName": "XPNDR (Transponder)",
+                    "events": [
+                        {
+                            "eventID": "AXIS_MIXTURE_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "31"
+                        },
+                        {
+                            "eventID": "AXIS_MIXTURE1_SET",
+                            "speechText": "",
+                            "hasParam": "false",
+                            "id": "32"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

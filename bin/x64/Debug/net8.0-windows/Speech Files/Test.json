@@ -6,14 +6,8 @@
         {
           "subcategoryName": "Subcategory1",
           "events": [
-            {
-              "eventID": "Event1",
-              "speechText": "qweqwe"
-            },
-            {
-              "eventID": "Event2",
-              "speechText": "Text2"
-            }
+            {"eventID": "Event1","speechText": "qweqwe","hasParameter": True },
+            {"eventID": "Event2","speechText": "Text2","hasParameter": True }
           ]
         }
       ]
