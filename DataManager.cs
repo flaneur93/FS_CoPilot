@@ -122,7 +122,7 @@ public class DataManager
 
         try
         {
-            var grammarList = new List<string>();
+            var staticChoicesList = new List<string>();
 
             foreach (var subcategoryEvents in Events.Values)
             {
@@ -130,13 +130,16 @@ public class DataManager
                 {
                     if (!string.IsNullOrEmpty(eventItem.SpeechText))
                     {
-                        grammarList.Add(eventItem.SpeechText);
+                        staticChoicesList.Add(eventItem.SpeechText);
                     }
                 }
             }
 
-            // Grammar.json dosyasını oluştur
-            var grammarJson = JsonSerializer.Serialize(new { Grammar = grammarList }, new JsonSerializerOptions { WriteIndented = true });
+            // Grammar.json dosyasını StaticChoices ile oluştur
+            var grammarJson = JsonSerializer.Serialize(
+                new { StaticChoices = staticChoicesList },
+                new JsonSerializerOptions { WriteIndented = true }
+            );
             File.WriteAllText(outputFilePath, grammarJson);
         }
         catch (Exception ex)
