@@ -7,15 +7,23 @@ using System.Text.Json;
 public class VoiceModule
 {
     private SpeechRecognitionEngine recognizer;
+    private List<string> recognitionBuffer = new List<string>();
+    private System.Timers.Timer resultTimer;
 
     public VoiceModule()
     {
+
+
         try
         {
             MainWindow.Instance.WriteToMainConsole("[DEBUG] VoiceModule oluşturuluyor...");
             recognizer = new SpeechRecognitionEngine();
             MainWindow.Instance.WriteToMainConsole("[DEBUG] SpeechRecognitionEngine başarıyla oluşturuldu.");
             InitializeRecognizer();
+            resultTimer = new System.Timers.Timer(1000); // 1 saniye
+            resultTimer.Elapsed += ProcessRecognitionBuffer;
+            resultTimer.AutoReset = false;
+
         }
         catch (Exception ex)
         {
@@ -23,41 +31,36 @@ public class VoiceModule
         }
     }
 
-    private readonly Dictionary<string, string> _customMappings = new Dictionary<string, string>
-{
-    { "Lima", "L" },
-    { "Alpha", "A" },
-    { "Bravo", "B" },
-    { "Charlie", "C" }
-};
-
-
     private void InitializeRecognizer()
     {
         try
         {
             MainWindow.Instance.WriteToMainConsole("[DEBUG] Recognizer başlatılıyor...");
 
-            // Eski tanıma motorunu durdur ve serbest bırak
+            // Eski tanıma motorunu temizle
             if (recognizer != null)
             {
                 recognizer.RecognizeAsyncStop();
-                recognizer.UnloadAllGrammars();
                 recognizer.Dispose();
-                MainWindow.Instance.WriteToMainConsole("[DEBUG] Eski Recognizer temizlendi.");
             }
 
-            // Yeni tanıma motoru oluştur
+            // Yeni tanıma motorunu oluştur
             recognizer = new SpeechRecognitionEngine();
-            recognizer.SetInputToDefaultAudioDevice(); // Mikrofonu varsayılan giriş olarak ayarla
+            recognizer.SetInputToDefaultAudioDevice();
             MainWindow.Instance.WriteToMainConsole("[DEBUG] Yeni Recognizer oluşturuldu ve mikrofon ayarlandı.");
 
-            // Yeni grammar'ı yükle
+            // Sessizlik sürelerini ayarla
+            recognizer.EndSilenceTimeout = TimeSpan.FromMilliseconds(30); // Normal tanımalar için sessizlik süresi
+            recognizer.EndSilenceTimeoutAmbiguous = TimeSpan.FromMilliseconds(100); // Belirsiz tanımalar için sessizlik süresi
+
+            // Grammar'ı yükle
             LoadGrammarFromJson();
 
             recognizer.SpeechRecognized += Recognizer_SpeechRecognized;
             recognizer.SpeechRecognitionRejected += Recognizer_SpeechRecognitionRejected;
-            MainWindow.Instance.WriteToMainConsole("[DEBUG] Yeni Recognizer event'leri bağlandı.");
+
+            recognizer.RecognizeAsync(RecognizeMode.Multiple);
+            MainWindow.Instance.WriteToMainConsole("[INFO] Sesli algılama başlatıldı.");
         }
         catch (Exception ex)
         {
@@ -65,7 +68,7 @@ public class VoiceModule
         }
     }
 
-    private readonly Dictionary<string, string> customMappings = new Dictionary<string, string>
+    private readonly Dictionary<string, string> _customMappings = new Dictionary<string, string>
 {
     { "Alpha", "A" },
     { "Bravo", "B" },
@@ -73,6 +76,29 @@ public class VoiceModule
     { "One", "1" },
     { "Two", "2" }
 };
+
+    private void ProcessRecognitionBuffer(object sender, System.Timers.ElapsedEventArgs e)
+    {
+        try
+        {
+            if (recognitionBuffer.Count > 0)
+            {
+                // Tüm tanıma sonuçlarını birleştir
+                string finalResult = string.Join(" ", recognitionBuffer);
+
+                // Konsola yaz
+                MainWindow.Instance.WriteToMainConsole($"[RECOGNIZED] {finalResult}");
+
+                // Buffer'ı temizle
+                recognitionBuffer.Clear();
+            }
+        }
+        catch (Exception ex)
+        {
+            MainWindow.Instance.WriteToMainConsole($"[ERROR] Buffer işlenirken hata oluştu: {ex.Message}");
+        }
+    }
+
 
 
 
@@ -83,30 +109,28 @@ public class VoiceModule
     {
         try
         {
-            string grammarPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Grammar.json");
-            if (System.IO.File.Exists(grammarPath))
-            {
-                string grammarContent = System.IO.File.ReadAllText(grammarPath);
-                var grammarData = JsonSerializer.Deserialize<GrammarFile>(grammarContent);
+            var staticChoices = new Choices(); // Sabit ifadeler için
+            var dynamicChoices = new Choices(); // Dinamik ifadeler için (Lima, Tango, Alpha, Bravo gibi)
 
-                if (grammarData?.Grammar != null && grammarData.Grammar.Count > 0)
-                {
-                    var choices = new Choices(grammarData.Grammar.ToArray());
-                    var grammarBuilder = new GrammarBuilder(choices);
-                    var grammar = new Grammar(grammarBuilder);
+            // Sabit ifadeleri ekle
+            staticChoices.Add("get weather data");
 
-                    recognizer.LoadGrammar(grammar);
-                    MainWindow.Instance.WriteToMainConsole("[INFO] Yeni Grammar başarıyla yüklendi.");
-                }
-                else
-                {
-                    MainWindow.Instance.WriteToMainConsole("[ERROR] Yeni Grammar.json içinde geçerli gramer bulunamadı.");
-                }
-            }
-            else
+            // Haritalamadaki dinamik ifadeleri ekle
+            foreach (var key in _customMappings.Keys)
             {
-                MainWindow.Instance.WriteToMainConsole("[ERROR] Yeni Grammar.json dosyası bulunamadı.");
+                dynamicChoices.Add(key);
             }
+
+            // Grammar Builder oluştur
+            var grammarBuilder = new GrammarBuilder();
+            grammarBuilder.Append(staticChoices); // İlk kısmı ekle (örneğin, "get weather data")
+            grammarBuilder.Append(dynamicChoices, 0, 10); // Ardışık kelimeleri destekle (0-10 kelime arası)
+
+            // Grammar'ı yükle
+            var grammar = new Grammar(grammarBuilder);
+            recognizer.LoadGrammar(grammar);
+
+            MainWindow.Instance.WriteToMainConsole("[INFO] Grammar ve CustomMappings başarıyla yüklendi.");
         }
         catch (Exception ex)
         {
@@ -114,46 +138,51 @@ public class VoiceModule
         }
     }
 
-    private class GrammarFile
-    {
-        public List<string> Grammar { get; set; }
-    }
-
     private void Recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
     {
         try
         {
             string recognizedText = e.Result.Text; // Tanınan tüm metin
-            string[] words = recognizedText.Split(' '); // Kelimeleri boşlukla ayır
-            string finalResult = ""; // Nihai sonuç
+            string[] words = recognizedText.Split(' '); // Kelimeleri ayır
+            string staticPart = ""; // Sabit komut kısmı
+            string dynamicPart = ""; // Dinamik kısım (haritalamalar)
+
+            bool isDynamicPart = false;
 
             foreach (var word in words)
             {
                 if (_customMappings.ContainsKey(word))
                 {
-                    // Kod tarafındaki tanımlamaları birleştir
-                    finalResult += _customMappings[word];
+                    // Haritalanmış kelimeler dinamik kısma eklenir
+                    dynamicPart += _customMappings[word];
+                    isDynamicPart = true;
                 }
                 else
                 {
-                    // Grammar'den gelen kelimeler olduğu gibi yazılır (boşluk eklenir)
-                    if (!string.IsNullOrEmpty(finalResult))
+                    // Haritalanmamış kelimeler sabit kısma eklenir
+                    if (!isDynamicPart)
                     {
-                        finalResult += " "; // Kod tarafındaki ve grammar arasına boşluk ekle
+                        staticPart += word + " ";
                     }
-
-                    finalResult += word; // Grammar'deki kelimeyi olduğu gibi ekle
+                    else
+                    {
+                        // Dinamik kısımdan sonra gelen haritalanmamış kelime
+                        dynamicPart += " " + word;
+                    }
                 }
             }
 
             // Nihai çıktıyı konsola yaz
-            MainWindow.Instance.WriteToMainConsole(finalResult);
+            MainWindow.Instance.WriteToMainConsole($"[COMMAND] {staticPart.Trim()}");
+            MainWindow.Instance.WriteToMainConsole($"[DYNAMIC] {dynamicPart.Trim()}");
         }
         catch (Exception ex)
         {
             MainWindow.Instance.WriteToMainConsole($"[ERROR] Algılanan ses işlenemedi: {ex.Message}");
         }
     }
+
+
 
     private void Recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)
     {
@@ -194,7 +223,17 @@ public class VoiceModule
         InitializeRecognizer();
         StartRecognition();
     }
+
+    private class GrammarFile
+    {
+        public List<string> Grammar { get; set; }
+    }
+
+
 }
+
+
+
 
 
 

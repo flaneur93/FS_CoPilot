@@ -103,13 +103,13 @@
           "Js_Events": [
             {
               "Js_Event": "ANTI_ICE_GRADUAL_SET",
-              "SpeechText": "",
+              "SpeechText": "Alpha",
               "hasParam": false,
               "Js_id": "11"
             },
             {
               "Js_Event": "ANTI_ICE_GRADUAL_SET_ENG1",
-              "SpeechText": "",
+              "SpeechText": "Bravo",
               "hasParam": false,
               "Js_id": "12"
             }
