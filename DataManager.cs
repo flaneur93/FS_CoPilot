@@ -152,6 +152,28 @@ public class DataManager
         return null; // Eğer bulunamazsa null döndür
     }
 
+    public Dictionary<uint, string> GetEventMappings()
+    {
+        var eventMappings = new Dictionary<uint, string>();
+
+        foreach (var subcategoryEvents in Events.Values)
+        {
+            foreach (var eventItem in subcategoryEvents)
+            {
+                if (!string.IsNullOrEmpty(eventItem.JsName) && !string.IsNullOrEmpty(eventItem.Id))
+                {
+                    if (uint.TryParse(eventItem.Id, out uint eventID))
+                    {
+                        eventMappings[eventID] = eventItem.JsName;
+                    }
+                }
+            }
+        }
+
+        return eventMappings;
+    }
+
+
 
 
 }

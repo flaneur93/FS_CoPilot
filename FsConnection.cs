@@ -7,6 +7,7 @@ public class FsConnection
 {
     private readonly MainWindow _mainWindow;
     private bool isConnected = false;
+    private DataManager _dataManager = new DataManager();
     private bool isFsRunningLastCheck = false; // Son kontrol durumunu saklar
     private bool isFirstCheck = true;         // İlk kontrol durumu
 
@@ -18,13 +19,30 @@ public class FsConnection
     [DllImport("SimConnectWrapper.dll")]
     private static extern int Connect();
 
-
     [DllImport("SimConnectWrapper.dll")]
     private static extern int Disconnect();
 
+    [DllImport("SimConnectWrapper.dll")]
+    private static extern int MapClientEventToSimEvent(uint eventID, string simEventName);
+
+    [DllImport("SimConnectWrapper.dll")]
+    private static extern int SendEvent(uint eventID, uint data, uint groupID);
+
+    [DllImport("SimConnectWrapper.dll")]
+    private static extern int AddDynamicDataDefinition(string variableName, string unit);
+
+    [DllImport("SimConnectWrapper.dll")]
+    private static extern int RequestDynamicData(string variableName);
 
 
 
+
+    public void InitializeMappings()
+    {
+        var eventMappings = _dataManager.GetEventMappings(); // DataManager'dan Event eşleştirmelerini al
+
+        MapClientEvents(eventMappings);
+    }
 
     private bool IsFlightSimulatorRunning()
     {
@@ -94,4 +112,50 @@ public class FsConnection
             _mainWindow.WriteToMainConsole($"[ERROR] SimConnect bağlantısı kapatılamadı! Hata kodu: {result}");
         }
     }
+
+    public void MapClientEvents(Dictionary<uint, string> eventMappings)
+    {
+        if (!isConnected)
+        {
+            _mainWindow.WriteToMainConsole("[ERROR] SimConnect bağlantısı kurulmadı.");
+            return;
+        }
+
+        foreach (var mapping in eventMappings)
+        {
+            uint eventID = mapping.Key; // JSON'dan alınan Event ID
+            string simEventName = mapping.Value; // JSON'daki SimConnect Event Name
+
+            int result = MapClientEventToSimEvent(eventID, simEventName);
+            if (result == 0)
+            {
+                _mainWindow.WriteToMainConsole($"[INFO] MapClientEventToSimEvent: {eventID} -> {simEventName}");
+            }
+            else
+            {
+                _mainWindow.WriteToMainConsole($"[ERROR] MapClientEventToSimEvent başarısız: {eventID} -> {simEventName}");
+            }
+        }
+    }
+
+    public void SendSimCommand(uint eventID, uint data = 0, uint groupID = 0)
+    {
+        if (!isConnected)
+        {
+            _mainWindow.WriteToMainConsole("[ERROR] SimConnect bağlantısı kurulmadı.");
+            return;
+        }
+
+        int result = SendEvent(eventID, data, groupID);
+        if (result == 0)
+        {
+            _mainWindow.WriteToMainConsole($"[INFO] SimConnect komutu başarıyla gönderildi: Event ID={eventID}, Data={data}");
+        }
+        else
+        {
+            _mainWindow.WriteToMainConsole($"[ERROR] SimConnect komutu gönderilemedi! Event ID={eventID}, Data={data}");
+        }
+    }
+
+
 }
