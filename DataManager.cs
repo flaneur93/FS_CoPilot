@@ -121,37 +121,35 @@ public class DataManager
         File.WriteAllText(LoadedJsonProfile, updatedJson);
     }
 
-    public void CreateGrammarJson(string outputFilePath)
+    public List<string> GetSpeechTexts()
     {
-        if (string.IsNullOrEmpty(LoadedJsonProfile))
-            throw new Exception("JSON profili yüklenmedi.");
-
-        try
+        var speechTexts = new List<string>();
+        foreach (var subcategoryEvents in Events.Values)
         {
-            var staticChoicesList = new List<string>();
-
-            foreach (var subcategoryEvents in Events.Values)
+            foreach (var eventItem in subcategoryEvents)
             {
-                foreach (var eventItem in subcategoryEvents)
+                if (!string.IsNullOrEmpty(eventItem.SpeechText))
                 {
-                    if (!string.IsNullOrEmpty(eventItem.SpeechText))
-                    {
-                        staticChoicesList.Add(eventItem.SpeechText);
-                    }
+                    speechTexts.Add(eventItem.SpeechText);
                 }
             }
+        }
+        return speechTexts;
+    }
 
-            // Grammar.json dosyasını StaticChoices ile oluştur
-            var grammarJson = JsonSerializer.Serialize(
-                new { StaticChoices = staticChoicesList },
-                new JsonSerializerOptions { WriteIndented = true }
-            );
-            File.WriteAllText(outputFilePath, grammarJson);
-        }
-        catch (Exception ex)
+    public Event GetEventBySpeechText(string speechText)
+    {
+        foreach (var subcategoryEvents in Events.Values)
         {
-            throw new Exception($"Grammar.json oluşturulurken hata oluştu: {ex.Message}");
+            foreach (var eventItem in subcategoryEvents)
+            {
+                if (eventItem.SpeechText == speechText)
+                {
+                    return eventItem; // Eşleşen Event'i döndür
+                }
+            }
         }
+        return null; // Eğer bulunamazsa null döndür
     }
 
 

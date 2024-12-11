@@ -1,11 +1,8 @@
 ﻿using System.IO;
-using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Whisper.net;
-using NAudio.Wave;
 
 
 
@@ -36,12 +33,11 @@ namespace fs_copilot
 
             var modelPath = "ggml-large-v3-turbo-q8_0.bin";
             var audioFilePath = "temp_audio.wav";
-            var grammarPath = "grammar.json"; // Grammar dosyasının yolu
 
             MainWindow.Instance = this;
             _fsConnection = new FsConnection(this);
             _dataManager = new DataManager();
-            _voiceModule = new VoiceModule(modelPath, audioFilePath, grammarPath, MainConsole);
+            _voiceModule = new VoiceModule(modelPath, audioFilePath, MainConsole,_dataManager);
 
             InitializeFsConnection();
 
@@ -53,6 +49,7 @@ namespace fs_copilot
             {
                 _isKeyHeld = true;
                 _voiceModule.StartRecording();
+                _voiceModule.PlayBeepAfterDelay(500);
             }
         }
 
@@ -157,13 +154,8 @@ namespace fs_copilot
                 EventListView.Items.Clear();
                 Subcategory_CB.Items.Clear();
 
-                // Yeni Grammar.json oluştur
-                string grammarPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Grammar.json");
-                _dataManager.CreateGrammarJson(grammarPath);
-                WriteToMainConsole($"[INFO] Yeni Grammar.json başarıyla oluşturuldu: {grammarPath}");
-
                 // VoiceModule yeniden başlat
-                
+
             }
             catch (Exception ex)
             {

@@ -1,45 +1,35 @@
 ﻿using NAudio.Wave;
 using System;
 using System.IO;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text.Json;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using Whisper.net;
 using Whisper.net.Ggml;
-using System.Media; // SoundPlayer için
-
 
 public class VoiceModule
 {
     private readonly string _modelPath;
     private readonly string _audioFilePath;
-    private readonly string _grammarPath;
     private readonly TextBlock _consoleOutput;
-
 
     private WaveInEvent _waveIn;
     private WaveFileWriter _waveFileWriter;
     private bool _isRecording = false;
+    private readonly DataManager _dataManager;
 
-    private List<string> _grammarChoices;
-    private Dictionary<string, string> _dynamicChoices;
 
-    public VoiceModule(string modelPath, string audioFilePath, string grammarPath, TextBlock consoleOutput)
+    public VoiceModule(string modelPath, string audioFilePath, TextBlock consoleOutput, DataManager dataManager)
     {
         _modelPath = modelPath;
         _audioFilePath = audioFilePath;
-        _grammarPath = grammarPath;
         _consoleOutput = consoleOutput;
+        _dataManager = dataManager;
+
 
         InitializeAudioRecorder();
-        LoadGrammarChoices();
-        InitializeDynamicChoices();
+        _dataManager = dataManager;
     }
-
-
-
 
     private void Log(string message)
     {
@@ -56,64 +46,6 @@ public class VoiceModule
         _waveIn.RecordingStopped += OnRecordingStopped;
     }
 
-    private void LoadGrammarChoices()
-    {
-        if (File.Exists(_grammarPath))
-        {
-            try
-            {
-                var grammarJson = File.ReadAllText(_grammarPath);
-                var grammarData = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(grammarJson);
-
-                if (grammarData != null && grammarData.ContainsKey("StaticChoices"))
-                {
-                    _grammarChoices = grammarData["StaticChoices"];
-                    Log($"[INFO] Grammar.json yüklendi. {_grammarChoices.Count} ifade tanımlandı.");
-                }
-                else
-                {
-                    Log("[WARNING] Grammar.json 'StaticChoices' içermiyor.");
-                    _grammarChoices = new List<string>();
-                }
-            }
-            catch (Exception ex)
-            {
-                Log($"[ERROR] Grammar.json yüklenirken hata oluştu: {ex.Message}");
-                _grammarChoices = new List<string>();
-            }
-        }
-        else
-        {
-            Log("[ERROR] Grammar.json dosyası bulunamadı.");
-            _grammarChoices = new List<string>();
-        }
-    }
-
-    private void InitializeDynamicChoices()
-    {
-        // Dinamik seçimler burada tanımlanır
-        _dynamicChoices = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
-        {
-            { "echo", "E" },
-            { "lima", "L" }
-        };
-        Log($"[INFO] Dinamik seçimler yüklendi. {_dynamicChoices.Count} ifade tanımlandı.");
-    }
-
-    private void OnDataAvailable(object sender, WaveInEventArgs e)
-    {
-        _waveFileWriter?.Write(e.Buffer, 0, e.BytesRecorded);
-    }
-
-    private void OnRecordingStopped(object sender, StoppedEventArgs e)
-    {
-        _waveFileWriter?.Dispose();
-        _waveFileWriter = null;
-
-        Log("[INFO] Ses kaydı tamamlandı. İşleme başlıyor...");
-        ProcessRecordedAudio();
-    }
-
     public void StartRecording()
     {
         if (_isRecording)
@@ -126,38 +58,11 @@ public class VoiceModule
         _waveFileWriter = new WaveFileWriter(_audioFilePath, _waveIn.WaveFormat);
         _waveIn.StartRecording();
         _isRecording = true;
-
-        // 500ms sonra bip sesi çal
-        PlayBeepAfterDelay(500);
     }
 
-    private async void PlayBeepAfterDelay(int delayMilliseconds)
+    private void OnDataAvailable(object sender, WaveInEventArgs e)
     {
-        await Task.Delay(delayMilliseconds);
-
-        try
-        {
-            // Bip sesi çalma
-            Console.Beep(1000, 200); // 1000 Hz frekans, 200ms süre
-            Log("[INFO] Bip sesi çalındı.");
-        }
-        catch (Exception ex)
-        {
-            Log($"[ERROR] Bip sesi çalınırken hata oluştu: {ex.Message}");
-        }
-    }
-
-    public void StopRecording()
-    {
-        if (!_isRecording)
-        {
-            Log("[WARNING] Kayıt yapılmıyor.");
-            return;
-        }
-
-        Log("[INFO] Ses kaydı durduruluyor...");
-        _waveIn.StopRecording();
-        _isRecording = false;
+        _waveFileWriter?.Write(e.Buffer, 0, e.BytesRecorded);
     }
 
     private async void ProcessRecordedAudio()
@@ -183,13 +88,16 @@ public class VoiceModule
             var recognizedTexts = new List<string>();
             await foreach (var result in processor.ProcessAsync(fileStream))
             {
-                recognizedTexts.Add(result.Text.Trim());
-                Log($"[RECOGNIZED] {result.Text}");
+                string cleanText = RemovePunctuation(result.Text.Trim()); // Noktalama işaretlerini kaldır
+                recognizedTexts.Add(cleanText);
+                
             }
 
-            Log("[INFO] İşlenmiş metin oluşturuluyor...");
-            string finalResult = ProcessDynamicChoices(recognizedTexts);
-            Log($"[RESULT] {finalResult}");
+            // Komutları profile göre işle
+            foreach (var text in recognizedTexts)
+            {
+                ProcessCommand(text);
+            }
 
             Log("[INFO] Ses işleme tamamlandı.");
         }
@@ -199,108 +107,55 @@ public class VoiceModule
         }
     }
 
-    private string ProcessDynamicChoices(List<string> recognizedTexts)
+    private void ProcessCommand(string command)
     {
-        var finalOutput = new List<string>();
-        bool lastWasStatic = false; // Son işlenen öğenin StaticChoice olup olmadığını takip eder
+        var speechTexts = _dataManager.GetSpeechTexts(); // Profildeki speechText ifadeleri
+        int nGramSize = 2;
 
-        foreach (var text in recognizedTexts)
+        // N-Gram tabanlı en iyi eşleşmeyi bul
+        string bestMatch = FindBestMatchWithNGram(command, speechTexts, nGramSize);
+
+        if (!string.IsNullOrEmpty(bestMatch))
         {
-            // 1. Metni normalize et
-            string normalizedText = NormalizeText(text);
+            // Eşleşen komutun Event nesnesini al
+            var matchedEvent = _dataManager.GetEventBySpeechText(bestMatch);
 
-            // 2. Birleşik metinleri parçala
-            var splitWords = SplitCombinedWords(normalizedText);
-
-            // 3. Parçalanmış kelimeleri sırayla işle
-            foreach (var word in splitWords)
+            if (matchedEvent != null)
             {
-                // 4. DynamicChoices kontrolü
-                if (_dynamicChoices.TryGetValue(word, out var dynamicValue))
-                {
-                    if (lastWasStatic)
-                    {
-                        finalOutput.Add(dynamicValue);
-                    }
-                    else
-                    {
-                        Log($"[ERROR] DynamicChoice '{word}' öncesinde StaticChoice olmadığından işlenemiyor.");
-                    }
-                }
-                // 5. StaticChoices kontrolü
-                else if (_grammarChoices.Contains(word, StringComparer.OrdinalIgnoreCase))
-                {
-                    if (lastWasStatic)
-                    {
-                        Log($"[ERROR] Arka arkaya iki StaticChoice işlenemez: '{word}' işlenemedi.");
-                    }
-                    else
-                    {
-                        finalOutput.Add(word);
-                        lastWasStatic = true;
-                    }
-                }
-                else
-                {
-                    Log($"[WARNING] '{word}' için eşleşme bulunamadı.");
-                }
+                Log($"[RECOGNIZED] {command}");
+                Log($"[MATCHED EVENT] {matchedEvent.SpeechText}");
+                Log($"[INFO] hasParam: {matchedEvent.HasParam}");
 
-                // Eğer işlem yapılan bir DynamicChoice varsa, lastWasStatic'i false yap
-                if (_dynamicChoices.ContainsKey(word))
+                if (matchedEvent.HasParam ?? false)
                 {
-                    lastWasStatic = false;
+                    string paramValue = ExtractParam(command, matchedEvent.SpeechText, matchedEvent.PType);
+                    Log($"[EVENT PARAM] {paramValue}");
+                    Log($"[INFO] pType: {matchedEvent.PType}");
                 }
             }
-        }
-
-        // Sonuçları birleştir ve döndür
-        return string.Join(" ", finalOutput);
-    }
-
-    private List<string> SplitCombinedWords(string text)
-    {
-        // Birleşik kelimeleri parçalamak için büyük harfleri ve boşlukları dikkate al
-        var words = new List<string>();
-        int wordStart = 0;
-
-        for (int i = 1; i < text.Length; i++)
-        {
-            if (char.IsUpper(text[i]) && !char.IsWhiteSpace(text[i - 1]))
+            else
             {
-                // Yeni bir kelime başlangıcı
-                words.Add(text.Substring(wordStart, i - wordStart).ToLower());
-                wordStart = i;
+                Log("[ERROR] Eşleşen Event bulunamadı.");
             }
         }
-
-        // Son kelimeyi ekle
-        if (wordStart < text.Length)
+        else
         {
-            words.Add(text.Substring(wordStart).ToLower());
+            Log("[INFO] Uygun eşleşme bulunamadı.");
         }
-
-        return words;
     }
 
-
-    private string GetClosestMatch(string input, List<string> choices)
+    private string FindBestMatchWithNGram(string command, List<string> speechTexts, int n)
     {
-        int threshold = 70; // Benzerlik yüzdesi için eşik değeri
         string bestMatch = null;
-        int highestScore = 0;
+        double highestSimilarity = 0;
 
-        // Normalize edilen giriş
-        string normalizedInput = NormalizeText(input);
-
-        foreach (var choice in choices)
+        foreach (var speechText in speechTexts)
         {
-            string normalizedChoice = NormalizeText(choice);
-
-            int score = CalculateLevenshteinSimilarity(normalizedInput, normalizedChoice);
-            if (score > highestScore && score >= threshold)
+            double similarity = CalculateNGramSimilarity(command, speechText, n);
+            if (similarity > highestSimilarity)
             {
-                highestScore = score;
-                bestMatch = choice;
+                highestSimilarity = similarity;
+                bestMatch = speechText;
             }
         }
 
@@ -309,45 +164,107 @@ public class VoiceModule
 
     private string NormalizeText(string text)
     {
-        // Küçük harfe çevir, fazla boşlukları kaldır ve tüm noktalama işaretlerini sil
-        return new string(
-            text.ToLower()
-                .Trim()
-                .Where(c => !char.IsPunctuation(c))
-                .ToArray()
-        );
+        return string.Join(" ", text.ToLower().Split(' ', StringSplitOptions.RemoveEmptyEntries));
     }
 
-    private int CalculateLevenshteinSimilarity(string source, string target)
+    private void OnRecordingStopped(object sender, StoppedEventArgs e)
     {
-        if (string.IsNullOrEmpty(source) || string.IsNullOrEmpty(target))
-            return 0;
+        _waveFileWriter?.Dispose();
+        _waveFileWriter = null;
 
-        int[,] distance = new int[source.Length + 1, target.Length + 1];
+        Log("[INFO] Ses kaydı tamamlandı. İşleme başlıyor...");
+        ProcessRecordedAudio();
+    }
 
-        for (int i = 0; i <= source.Length; i++)
-            distance[i, 0] = i;
-
-        for (int j = 0; j <= target.Length; j++)
-            distance[0, j] = j;
-
-        for (int i = 1; i <= source.Length; i++)
+    public async void PlayBeepAfterDelay(int delayMilliseconds)
+    {
+        await Task.Delay(delayMilliseconds);
+        try
         {
-            for (int j = 1; j <= target.Length; j++)
-            {
-                int cost = (source[i - 1] == target[j - 1]) ? 0 : 1;
-                distance[i, j] = Math.Min(
-                    Math.Min(distance[i - 1, j] + 1, distance[i, j - 1] + 1),
-                    distance[i - 1, j - 1] + cost
-                );
-            }
+            // Bip sesi çalma
+            Console.Beep(2000, 300); // 1000 Hz frekans, 200ms süre
+            Log("[INFO] Bip sesi çalındı.");
+        }
+        catch (Exception ex)
+        {
+            Log($"[ERROR] Bip sesi çalınırken hata oluştu: {ex.Message}");
+        }
+    }
+
+    private List<string> GenerateNGrams(string text, int n)
+    {
+        var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var ngrams = new List<string>();
+
+        for (int i = 0; i <= words.Length - n; i++)
+        {
+            ngrams.Add(string.Join(" ", words.Skip(i).Take(n)));
         }
 
-        int maxLength = Math.Max(source.Length, target.Length);
-        int editDistance = distance[source.Length, target.Length];
+        return ngrams;
+    }
 
-        // Benzerlik yüzdesi
-        return (int)((1.0 - (double)editDistance / maxLength) * 100);
+    private double CalculateNGramSimilarity(string text1, string text2, int n)
+    {
+        var ngrams1 = GenerateNGrams(NormalizeText(text1), n);
+        var ngrams2 = GenerateNGrams(NormalizeText(text2), n);
+
+        var intersection = ngrams1.Intersect(ngrams2).Count();
+        var union = ngrams1.Union(ngrams2).Count();
+
+        return union == 0 ? 0 : (double)intersection / union;
+    }
+
+    private string RemoveTrailingPunctuation(string text)
+    {
+        return text.TrimEnd('.', '!', '?', ',', ';', ':'); // Sonundaki belirli işaretleri kaldırır
+    }
+
+    private string RemovePunctuation(string text)
+    {
+        return new string(text.Where(c => !char.IsPunctuation(c)).ToArray());
+    }
+
+
+    private string ExtractParam(string command, string matchedText, string pType)
+    {
+        // Komuttan matchedText kısmını çıkar
+        string remainingText = command.Replace(matchedText, "", StringComparison.OrdinalIgnoreCase).Trim();
+
+        // pType'a göre parametreyi işle
+        if (pType.Equals("Number", StringComparison.OrdinalIgnoreCase))
+        {
+            // Sayıları ayıkla
+            string number = new string(remainingText.Where(char.IsDigit).ToArray());
+            return string.IsNullOrEmpty(number) ? "No number found" : number;
+        }
+        else if (pType.Equals("Text", StringComparison.OrdinalIgnoreCase))
+        {
+            // Metni olduğu gibi döndür
+            return remainingText;
+        }
+
+        return "Unknown param type";
+    }
+
+
+
+
+
+
+
+
+    public void StopRecording()
+    {
+        if (!_isRecording)
+        {
+            Log("[WARNING] Kayıt yapılmıyor.");
+            return;
+        }
+
+        Log("[INFO] Ses kaydı durduruluyor...");
+        _waveIn.StopRecording();
+        _isRecording = false;
     }
 
     public void Dispose()
