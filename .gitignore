@@ -2,3 +2,11 @@
 /Models
 /bin/x64/Debug/net8.0-windows/Models
 /obj
+bin/x64/Debug/net8.0-windows/ggml-base.bin
+bin/x64/Debug/net8.0-windows/ggml-large-v3-turbo-q8_0.bin
+/bin/x64/Debug/net8.0-windows/runtimes/cuda/linux-x64
+/bin/x64/Debug/net8.0-windows/runtimes/noavx
+/bin/x64/Debug/net8.0-windows/runtimes/openvino
+/bin/x64/Debug/net8.0-windows/runtimes/vulkan
+/bin/x64/Debug/net8.0-windows/runtimes/win-arm64
+/bin/x64/Debug/net8.0-windows/runtimes/cuda

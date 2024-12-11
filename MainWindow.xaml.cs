@@ -4,6 +4,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
+using Whisper.net;
+using NAudio.Wave;
+
 
 
 
@@ -17,12 +20,11 @@ namespace fs_copilot
     public partial class MainWindow : Window
     {
 
-
         public static MainWindow Instance { get; private set; }
         private DataManager _dataManager = new DataManager();
         private FsConnection _fsConnection;
         private VoiceModule _voiceModule;
-
+        private bool _isKeyHeld = false; // F5'in basılı tutulduğunu kontrol eden bayrak
 
 
 
@@ -32,17 +34,36 @@ namespace fs_copilot
             InitializeComponent();
             PopulateProfileSelectComboBox();
 
+            var modelPath = "ggml-large-v3-turbo-q8_0.bin";
+            var audioFilePath = "temp_audio.wav";
+            var grammarPath = "grammar.json"; // Grammar dosyasının yolu
+
             MainWindow.Instance = this;
             _fsConnection = new FsConnection(this);
             _dataManager = new DataManager();
-            _voiceModule = new VoiceModule();
-            _voiceModule.StartRecognition();
+            _voiceModule = new VoiceModule(modelPath, audioFilePath, grammarPath, MainConsole);
 
             InitializeFsConnection();
 
         }
 
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F5 && !_isKeyHeld) // F5 ve tekrar tetiklenmesin
+            {
+                _isKeyHeld = true;
+                _voiceModule.StartRecording();
+            }
+        }
 
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F5)
+            {
+                _isKeyHeld = false;
+                _voiceModule.StopRecording();
+            }
+        }
 
 
 
@@ -142,8 +163,7 @@ namespace fs_copilot
                 WriteToMainConsole($"[INFO] Yeni Grammar.json başarıyla oluşturuldu: {grammarPath}");
 
                 // VoiceModule yeniden başlat
-                _voiceModule.RestartRecognition();
-                WriteToMainConsole("[INFO] VoiceModule yeniden başlatıldı.");
+                
             }
             catch (Exception ex)
             {
@@ -204,30 +224,6 @@ namespace fs_copilot
 
         #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         #region Console Functions
 
         public void WriteToMainConsole(string message)
@@ -235,6 +231,7 @@ namespace fs_copilot
             Dispatcher.Invoke(() =>
             {
                 MainConsole.Text += $"{message}\n";
+                Scroll.ScrollToEnd();
             });
         }
         public void WriteToInfoConsole(string message)
@@ -263,6 +260,7 @@ namespace fs_copilot
         protected override void OnClosed(EventArgs e)
         {
             _fsConnection.DisconnectFromFS();
+            _voiceModule.Dispose();
             base.OnClosed(e);
         }
 

@@ -1,6 +1,10 @@
 {
   "StaticChoices": [
-    "up test",
-    "down test"
+    "Landing gear up",
+    "landing gear down",
+    "test audio",
+    "television",
+    "Alpha",
+    "Bravo"
   ]
 }

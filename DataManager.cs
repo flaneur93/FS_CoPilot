@@ -50,7 +50,13 @@ public class DataManager
                                             JsName = eventElement.GetProperty("Js_Event").GetString(),
                                             SpeechText = eventElement.GetProperty("SpeechText").GetString(),
                                             HasParam = eventElement.GetProperty("hasParam").GetBoolean(),
-                                            Id = eventElement.GetProperty("Js_id").GetString()
+                                            Id = eventElement.GetProperty("Js_id").GetString(),
+                                            PType = eventElement.TryGetProperty("pType", out JsonElement pTypeElement)
+                                                ? pTypeElement.GetString()
+                                                : null,
+                                            PMap = eventElement.TryGetProperty("pMap", out JsonElement pMapElement)
+                                                ? JsonSerializer.Deserialize<Dictionary<string, string>>(pMapElement.GetRawText())
+                                                : null
                                         };
                                         eventList.Add(newEvent);
                                     }
@@ -158,4 +164,6 @@ public class Event
     public string ?SpeechText { get; set; }
     public bool ?HasParam { get; set; }
     public string  ?Id { get; set; }
+    public string? PType { get; set; } // Parametre türü
+    public Dictionary <string, string>? PMap { get; set; } // Parametre eşleme tablosu
 }

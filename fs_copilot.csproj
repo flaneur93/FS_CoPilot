@@ -17,6 +17,7 @@
     <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="System.Speech" Version="9.0.0" />
     <PackageReference Include="Vosk" Version="0.3.38" />
+    <PackageReference Include="Whisper.net.AllRuntimes" Version="1.7.3" />
   </ItemGroup>
 
   <ItemGroup>

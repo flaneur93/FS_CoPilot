@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fs_copilot"
         mc:Ignorable="d"
-        Title="MSFS Co-Pilot ~ v.0.1.4 Beta" Height="450" Width="900
+        KeyDown="Window_KeyDown"
+        KeyUp="Window_KeyUp"
+        Title="MSFS Co-Pilot ~ v.0.1.4 Beta" Height="450" Width="900 
         " MinWidth="900" MinHeight="450"
         Style="{DynamicResource CustomWindowStyle}">
     <TabControl>
@@ -55,7 +57,7 @@
                     </ListView>
 
                     <ComboBox x:Name="ProfileSelect_CB" Grid.Column="2" Margin="5,10,5,10" SelectionChanged="ProfileSelect_CB_SelectionChanged"/>
-                    <Button x:Name="StartStop_Btn" Grid.Column="3" Content="START" Margin="5,10,5,10"/>
+                    <Button x:Name="StartStop_Btn"  Grid.Column="3" Content="START" Margin="5,10,5,10"/>
                     <ScrollViewer Grid.Row="2" Grid.ColumnSpan="4" Margin="10,10,5,10">
                         <TextBlock x:Name="InfoConsole" Background="#FF242424"/>
                     </ScrollViewer>
@@ -122,7 +124,7 @@
         </TabItem>
         <TabItem Header="DEBUG">
             <Grid>
-                <ScrollViewer Margin="10,10,398,10">
+                <ScrollViewer x:Name="Scroll"   Margin="10,10,398,10">
                     <TextBlock x:Name="MainConsole" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="4" Background="Black"/>
                 </ScrollViewer>
             </Grid>

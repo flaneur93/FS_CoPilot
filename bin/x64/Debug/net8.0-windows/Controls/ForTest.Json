@@ -1,291 +1,355 @@
 {
-  "Js_Categories": [
-    {
-      "Js_CategoryName": "Instrumentation Events",
-      "Js_Subcategories": [
-        {
-          "Js_SubcategoryName": "Aircraft Instruments",
-          "Js_Events": [
-            {
-              "Js_Event": "GEAR_UP",
-              "SpeechText": "Landing gear up",
-              "hasParam": false,
-              "Js_id": "1"
-            },
-            {
-              "Js_Event": "GEAR_DOWN",
-              "SpeechText": "landing gear down",
-              "hasParam": false,
-              "Js_id": "2"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "EGT",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_CONDITION_LEVER_1_SET",
-              "SpeechText": "test audio",
-              "hasParam": false,
-              "Js_id": "3"
-            },
-            {
-              "Js_Event": "AXIS_CONDITION_LEVER_2_SET",
-              "SpeechText": "television",
-              "hasParam": false,
-              "Js_id": "4"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Js_CategoryName": "Misc Events",
-      "Js_Subcategories": [
-        {
-          "Js_SubcategoryName": "Aircraft Failures",
-          "Js_Events": [
-            {
-              "Js_Event": "ANTI_ICE_GRADUAL_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "5"
-            },
-            {
-              "Js_Event": "ANTI_ICE_GRADUAL_SET_ENG1",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "6"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "Landing Gear / Brakes",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_CONDITION_LEVER_1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "7"
-            },
-            {
-              "Js_Event": "AXIS_CONDITION_LEVER_2_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "8"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "Gliders",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "9"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "10"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Js_CategoryName": "Radio Navigation Events",
-      "Js_Subcategories": [
-        {
-          "Js_SubcategoryName": "ADF",
-          "Js_Events": [
-            {
-              "Js_Event": "ANTI_ICE_GRADUAL_SET",
-              "SpeechText": "Alpha",
-              "hasParam": false,
-              "Js_id": "11"
-            },
-            {
-              "Js_Event": "ANTI_ICE_GRADUAL_SET_ENG1",
-              "SpeechText": "Bravo",
-              "hasParam": false,
-              "Js_id": "12"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "Avionics",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_CONDITION_LEVER_1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "13"
-            },
-            {
-              "Js_Event": "AXIS_CONDITION_LEVER_2_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "14"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "COM",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "15"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "16"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "DME",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "17"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "18"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "ELT",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "19"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "20"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "GPS",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "21"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "22"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "Misc",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "23"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "24"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "NAV",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "25"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "26"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "TACAN",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "27"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "28"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "VOR",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "29"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "30"
-            }
-          ]
-        },
-        {
-          "Js_SubcategoryName": "XPNDR (Transponder)",
-          "Js_Events": [
-            {
-              "Js_Event": "AXIS_MIXTURE_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "31"
-            },
-            {
-              "Js_Event": "AXIS_MIXTURE1_SET",
-              "SpeechText": "",
-              "hasParam": false,
-              "Js_id": "32"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+	"Js_Categories": [
+		{
+			"Js_CategoryName": "Instrumentation Events",
+			"Js_Subcategories": [
+				{
+					"Js_SubcategoryName": "Aircraft Instruments",
+					"Js_Events": [
+						{
+							"Js_Event": "GEAR_UP",
+							"SpeechText": "Landing gear up",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "1"
+						},
+						{
+							"Js_Event": "GEAR_DOWN",
+							"SpeechText": "landing gear down",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "2"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "EGT",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_CONDITION_LEVER_1_SET",
+							"SpeechText": "test audio",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "3"
+						},
+						{
+							"Js_Event": "AXIS_CONDITION_LEVER_2_SET",
+							"SpeechText": "television",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "4"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Js_CategoryName": "Misc Events",
+			"Js_Subcategories": [
+				{
+					"Js_SubcategoryName": "Aircraft Failures",
+					"Js_Events": [
+						{
+							"Js_Event": "ANTI_ICE_GRADUAL_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "5"
+						},
+						{
+							"Js_Event": "ANTI_ICE_GRADUAL_SET_ENG1",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "6"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "Landing Gear / Brakes",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_CONDITION_LEVER_1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "7"
+						},
+						{
+							"Js_Event": "AXIS_CONDITION_LEVER_2_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "8"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "Gliders",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "9"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "10"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Js_CategoryName": "Radio Navigation Events",
+			"Js_Subcategories": [
+				{
+					"Js_SubcategoryName": "ADF",
+					"Js_Events": [
+						{
+							"Js_Event": "ANTI_ICE_GRADUAL_SET",
+							"SpeechText": "Alpha",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "11"
+						},
+						{
+							"Js_Event": "ANTI_ICE_GRADUAL_SET_ENG1",
+							"SpeechText": "Bravo",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "12"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "Avionics",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_CONDITION_LEVER_1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "13"
+						},
+						{
+							"Js_Event": "AXIS_CONDITION_LEVER_2_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "14"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "COM",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "15"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "16"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "DME",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "17"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "18"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "ELT",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "19"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "20"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "GPS",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "21"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "22"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "Misc",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "23"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "24"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "NAV",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "25"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "26"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "TACAN",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "27"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "28"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "VOR",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "29"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "30"
+						}
+					]
+				},
+				{
+					"Js_SubcategoryName": "XPNDR (Transponder)",
+					"Js_Events": [
+						{
+							"Js_Event": "AXIS_MIXTURE_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "31"
+						},
+						{
+							"Js_Event": "AXIS_MIXTURE1_SET",
+							"SpeechText": "",
+							"hasParam": false,
+							"pType": "",
+							"pMap": {},
+							"Js_id": "32"
+						}
+					]
+				}
+			]
+		}
+	]
 }

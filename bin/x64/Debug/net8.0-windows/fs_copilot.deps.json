@@ -11,6 +11,7 @@
           "NAudio": "2.2.1",
           "System.Speech": "9.0.0",
           "Vosk": "0.3.38",
+          "Whisper.net.AllRuntimes": "1.7.3",
           "Microsoft.FlightSimulator.SimConnect": "12.0.0.0"
         },
         "runtime": {
@@ -136,6 +137,38 @@
           }
         }
       },
+      "Whisper.net/1.7.3": {
+        "runtime": {
+          "lib/net8.0/Whisper.net.dll": {
+            "assemblyVersion": "1.7.3.0",
+            "fileVersion": "1.7.3.0"
+          }
+        }
+      },
+      "Whisper.net.AllRuntimes/1.7.3": {
+        "dependencies": {
+          "Whisper.net": "1.7.3",
+          "Whisper.net.Runtime": "1.7.3",
+          "Whisper.net.Runtime.CoreML": "1.7.3",
+          "Whisper.net.Runtime.Cuda": "1.7.3",
+          "Whisper.net.Runtime.NoAvx": "1.7.3",
+          "Whisper.net.Runtime.OpenVino": "1.7.3",
+          "Whisper.net.Runtime.Vulkan": "1.7.3"
+        }
+      },
+      "Whisper.net.Runtime/1.7.3": {},
+      "Whisper.net.Runtime.CoreML/1.7.3": {},
+      "Whisper.net.Runtime.Cuda/1.7.3": {
+        "dependencies": {
+          "Whisper.net.Runtime.Cuda.Linux": "1.7.3",
+          "Whisper.net.Runtime.Cuda.Windows": "1.7.3"
+        }
+      },
+      "Whisper.net.Runtime.Cuda.Linux/1.7.3": {},
+      "Whisper.net.Runtime.Cuda.Windows/1.7.3": {},
+      "Whisper.net.Runtime.NoAvx/1.7.3": {},
+      "Whisper.net.Runtime.OpenVino/1.7.3": {},
+      "Whisper.net.Runtime.Vulkan/1.7.3": {},
       "Microsoft.FlightSimulator.SimConnect/12.0.0.0": {
         "runtime": {
           "Microsoft.FlightSimulator.SimConnect.dll": {
@@ -242,6 +275,76 @@
       "sha512": "sha512-W/me6nwF7fq9uWVmqbmWvPx3DjhMSzb9D85IZa0FUg2PIxcWjfG55vYHBc+9xCuNL/zohIBRYTKiP4itnMU3ww==",
       "path": "vosk/0.3.38",
       "hashPath": "vosk.0.3.38.nupkg.sha512"
+    },
+    "Whisper.net/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j1ilge0R/hI4yFB7uc5mS9rnu+9ooVCtR9LEdvOe8YwlZ0196ER9QODj8P2SpyNSIj0PLXFHH603QbUnqZ8DPQ==",
+      "path": "whisper.net/1.7.3",
+      "hashPath": "whisper.net.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.AllRuntimes/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mZZKRp6azKB5tcqZlg4kKH3TUjpX1oSm1j9UrOxgi3qcIN8TGf35xjeozMrpqzKbDyIV2Lay9dRQ4FRomyTaRA==",
+      "path": "whisper.net.allruntimes/1.7.3",
+      "hashPath": "whisper.net.allruntimes.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.Runtime/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iQ1ynOcxFks0idM8zNd4OSX2dhy5N1EVCFau/A3mU0HnaENYGy6HGdt186Dx9C2m/I+365Xur6g+AnPT6xqe3g==",
+      "path": "whisper.net.runtime/1.7.3",
+      "hashPath": "whisper.net.runtime.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.Runtime.CoreML/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lbq8flzWbu9u/ktYd2eBrW6cswVNX6wzCZOmlvPG8GI4yGRt8ffurlAI6yk2ZnhVvT3mqXlfgnUqxDBNrxRpYQ==",
+      "path": "whisper.net.runtime.coreml/1.7.3",
+      "hashPath": "whisper.net.runtime.coreml.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.Runtime.Cuda/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pwNOkPE9dCERFKXBk4mplmuhgveOHkgnnC8mZ9YFxAH0A1NoRCu6uNz7bQBeBEVElpgwiasAQuf4XIvqzzUynQ==",
+      "path": "whisper.net.runtime.cuda/1.7.3",
+      "hashPath": "whisper.net.runtime.cuda.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.Runtime.Cuda.Linux/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w0l+cNFEjLus3H8mY858fmnYhuHEGVgQ/TFikif2fW0BnZ7zAY+hMH0FAfjKBCSblK061cHhTJ7b8+kntu7e9w==",
+      "path": "whisper.net.runtime.cuda.linux/1.7.3",
+      "hashPath": "whisper.net.runtime.cuda.linux.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.Runtime.Cuda.Windows/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BdmHnoayrvUh78e7Pmn74+QXqfZ+XnhXZdO6OZuuR6lBW2LCP+5mHon1Pt12n2x2ajv9YiJgrpMCEUzBrYqsQQ==",
+      "path": "whisper.net.runtime.cuda.windows/1.7.3",
+      "hashPath": "whisper.net.runtime.cuda.windows.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.Runtime.NoAvx/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0RD6ehO9glimoFg0E65w3g+IewZjIE1FMXPnYWrlr5Z8/TLk4JprMUldGDL9JgSJQtP4Gc92Im6+M//EeZQXUA==",
+      "path": "whisper.net.runtime.noavx/1.7.3",
+      "hashPath": "whisper.net.runtime.noavx.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.Runtime.OpenVino/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CO7Hho3cBtqJd5xDlHdhIEbq0Wd/Xom9Ck2or6Ku7GNegxZPg77IwmtPvZuzi2NB8ea4cOiprjdGYAosH1l7LA==",
+      "path": "whisper.net.runtime.openvino/1.7.3",
+      "hashPath": "whisper.net.runtime.openvino.1.7.3.nupkg.sha512"
+    },
+    "Whisper.net.Runtime.Vulkan/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9UgQcnyGgiROYvdtFo7b+01pV79ZhzsVWmVehSMbO8IUkoV6Jsc8D6UCIPWpNBuYq7Vu0xdZiXwNTmBtZ8/Tyw==",
+      "path": "whisper.net.runtime.vulkan/1.7.3",
+      "hashPath": "whisper.net.runtime.vulkan.1.7.3.nupkg.sha512"
     },
     "Microsoft.FlightSimulator.SimConnect/12.0.0.0": {
       "type": "reference",
