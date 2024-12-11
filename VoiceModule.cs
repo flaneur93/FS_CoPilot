@@ -18,6 +18,7 @@ public class VoiceModule
     private readonly string _grammarPath;
     private readonly TextBlock _consoleOutput;
 
+
     private WaveInEvent _waveIn;
     private WaveFileWriter _waveFileWriter;
     private bool _isRecording = false;

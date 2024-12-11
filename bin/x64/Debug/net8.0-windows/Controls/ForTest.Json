@@ -29,17 +29,17 @@
 					"Js_Events": [
 						{
 							"Js_Event": "AXIS_CONDITION_LEVER_1_SET",
-							"SpeechText": "test audio",
-							"hasParam": false,
-							"pType": "",
+							"SpeechText": "get weather data",
+							"hasParam": true,
+							"pType": "string",
 							"pMap": {},
 							"Js_id": "3"
 						},
 						{
 							"Js_Event": "AXIS_CONDITION_LEVER_2_SET",
-							"SpeechText": "television",
-							"hasParam": false,
-							"pType": "",
+							"SpeechText": "set altitude",
+							"hasParam": true,
+							"pType": "number",
 							"pMap": {},
 							"Js_id": "4"
 						}
@@ -55,18 +55,18 @@
 					"Js_Events": [
 						{
 							"Js_Event": "ANTI_ICE_GRADUAL_SET",
-							"SpeechText": "",
-							"hasParam": false,
-							"pType": "",
+							"SpeechText": "set radio",
+							"hasParam": true,
+							"pType": "number",
 							"pMap": {},
 							"Js_id": "5"
 						},
 						{
 							"Js_Event": "ANTI_ICE_GRADUAL_SET_ENG1",
-							"SpeechText": "",
-							"hasParam": false,
-							"pType": "",
-							"pMap": {},
+							"SpeechText": "set engine",
+							"hasParam": true,
+							"pType": "map",
+							"pMap": {"High":"2","Medium":"1","Low":"0"},
 							"Js_id": "6"
 						}
 					]
