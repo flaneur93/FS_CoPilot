@@ -8,7 +8,7 @@
           "Js_Events": [
             {
               "Js_Event": "GEAR_UP",
-              "SpeechText": "set radio",
+              "SpeechText": "landing gear up",
               "hasParam": false,
               "pType": "",
               "pMap": {},
@@ -16,7 +16,7 @@
             },
             {
               "Js_Event": "GEAR_DOWN",
-              "SpeechText": "deploy landing gear",
+              "SpeechText": "landing gear down",
               "hasParam": false,
               "pType": "",
               "pMap": {},
@@ -28,18 +28,18 @@
           "Js_SubcategoryName": "EGT",
           "Js_Events": [
             {
-              "Js_Event": "AXIS_CONDITION_LEVER_1_SET",
-              "SpeechText": "get weather data",
+              "Js_Event": "AP_ALT_VAR_SET_ENGLISH",
+              "SpeechText": "set altitude",
               "hasParam": true,
-              "pType": "string",
+              "pType": "number",
               "pMap": {},
               "Js_id": "3"
             },
             {
               "Js_Event": "AXIS_CONDITION_LEVER_2_SET",
-              "SpeechText": "set altitude",
+              "SpeechText": "get weather data",
               "hasParam": true,
-              "pType": "number",
+              "pType": "string",
               "pMap": {},
               "Js_id": "4"
             }

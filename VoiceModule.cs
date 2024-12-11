@@ -31,6 +31,59 @@ public class VoiceModule
         _dataManager = dataManager;
     }
 
+    private static readonly Dictionary<string, string> PhoneticAlphabet = new()
+    {
+        { "echo", "E" },
+        { "lima", "L" },
+        { "tango", "T" },
+        { "zulu", "Z" },
+        { "alpha", "A" },
+        { "bravo", "B" },
+        { "charlie", "C" },
+        { "delta", "D" },
+        { "foxtrot", "F" },
+        { "golf", "G" },
+        { "hotel", "H" },
+        { "india", "I" },
+        { "juliett", "J" },
+        { "kilo", "K" },
+        { "mike", "M" },
+        { "november", "N" },
+        { "oscar", "O" },
+        { "papa", "P" },
+        { "quebec", "Q" },
+        { "romeo", "R" },
+        { "sierra", "S" },
+        { "uniform", "U" },
+        { "victor", "V" },
+        { "whiskey", "W" },
+        { "xray", "X" },
+        { "yankee", "Y" }
+    };
+
+    private string ConvertPhoneticToLetters(string text)
+    {
+        var words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var result = new StringBuilder();
+
+        foreach (var word in words)
+        {
+            // En yakın phonetic eşleşmeyi bul
+            string closestMatch = FindClosestPhoneticMatch(word);
+
+            if (!string.IsNullOrEmpty(closestMatch) && PhoneticAlphabet.TryGetValue(closestMatch, out string letter))
+            {
+                result.Append(letter); // Kodlama harfini ekle
+            }
+            else
+            {
+                result.Append("?"); // Eşleşmeyenler için hata işareti
+            }
+        }
+
+        return result.ToString();
+    }
+
     private void Log(string message)
     {
         _consoleOutput.Dispatcher.Invoke(() => _consoleOutput.Text += message + Environment.NewLine);
@@ -123,12 +176,20 @@ public class VoiceModule
             if (matchedEvent != null)
             {
                 Log($"[RECOGNIZED] {command}");
-                Log($"[MATCHED EVENT] {matchedEvent.SpeechText}");
+                Log($"[MATCHED EVENT] {matchedEvent.JsName}");
+                Log($"[COMMAND] {matchedEvent.SpeechText}");
                 Log($"[INFO] hasParam: {matchedEvent.HasParam}");
 
                 if (matchedEvent.HasParam ?? false)
                 {
-                    string paramValue = ExtractParam(command, matchedEvent.SpeechText, matchedEvent.PType);
+                    // `ExtractParam` için mappedValues sağla
+                    string paramValue = ExtractParam(
+                        command,
+                        matchedEvent.SpeechText,
+                        matchedEvent.PType,
+                        matchedEvent.PMap // Mapped değerler
+                    );
+
                     Log($"[EVENT PARAM] {paramValue}");
                     Log($"[INFO] pType: {matchedEvent.PType}");
                 }
@@ -225,29 +286,92 @@ public class VoiceModule
         return new string(text.Where(c => !char.IsPunctuation(c)).ToArray());
     }
 
-
-    private string ExtractParam(string command, string matchedText, string pType)
+    private string ExtractParam(string command, string matchedText, string pType, Dictionary<string, string> mappedValues = null)
     {
         // Komuttan matchedText kısmını çıkar
         string remainingText = command.Replace(matchedText, "", StringComparison.OrdinalIgnoreCase).Trim();
 
         // pType'a göre parametreyi işle
-        if (pType.Equals("Number", StringComparison.OrdinalIgnoreCase))
+        if (pType.Equals("number", StringComparison.OrdinalIgnoreCase))
         {
             // Sayıları ayıkla
             string number = new string(remainingText.Where(char.IsDigit).ToArray());
             return string.IsNullOrEmpty(number) ? "No number found" : number;
         }
-        else if (pType.Equals("Text", StringComparison.OrdinalIgnoreCase))
+        else if (pType.Equals("string", StringComparison.OrdinalIgnoreCase))
         {
-            // Metni olduğu gibi döndür
-            return remainingText;
+            // PhoneticAlphabet'e göre metni dönüştür
+            return ConvertPhoneticToLetters(remainingText);
+        }
+        else if (pType.Equals("mapped", StringComparison.OrdinalIgnoreCase))
+        {
+            if (mappedValues == null || mappedValues.Count == 0)
+            {
+                return "No mapped values found";
+            }
+
+            // Mapped değerlerini kullanarak dönüşüm yap
+            var words = remainingText.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            var result = new StringBuilder();
+
+            foreach (var word in words)
+            {
+                if (mappedValues.TryGetValue(word.ToLower(), out string mappedValue))
+                {
+                    result.Append(mappedValue); // Mapped değeri ekle
+                }
+                else
+                {
+                    result.Append("?"); // Eşleşmeyen kelimeler için hata işareti
+                }
+            }
+
+            return result.ToString();
         }
 
         return "Unknown param type";
     }
 
+    private string FindClosestPhoneticMatch(string input)
+    {
+        string bestMatch = null;
+        int smallestDistance = int.MaxValue;
 
+        foreach (var key in PhoneticAlphabet.Keys)
+        {
+            int distance = CalculateLevenshteinDistance(input.ToLower(), key.ToLower());
+            if (distance < smallestDistance)
+            {
+                smallestDistance = distance;
+                bestMatch = key;
+            }
+        }
+
+        return bestMatch;
+    }
+
+    private int CalculateLevenshteinDistance(string source, string target)
+    {
+        int[,] dp = new int[source.Length + 1, target.Length + 1];
+
+        for (int i = 0; i <= source.Length; i++) dp[i, 0] = i;
+        for (int j = 0; j <= target.Length; j++) dp[0, j] = j;
+
+        for (int i = 1; i <= source.Length; i++)
+        {
+            for (int j = 1; j <= target.Length; j++)
+            {
+                int cost = source[i - 1] == target[j - 1] ? 0 : 1;
+
+                dp[i, j] = Math.Min(
+                    Math.Min(dp[i - 1, j] + 1, dp[i, j - 1] + 1),
+                    dp[i - 1, j - 1] + cost
+                );
+            }
+        }
+
+        return dp[source.Length, target.Length];
+    }
 
 
 
